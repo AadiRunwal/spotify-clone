@@ -1,0 +1,342 @@
+body{
+    margin: 0;
+    background: #000;
+    color: white;
+    font-family: "Montserrat";
+}
+
+.main{
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+/* Menu Bar */
+#menu{
+    display: none;
+}
+label #bars{
+    font-size: 2.5rem;
+    position: absolute;
+    z-index: 3;
+    top: 1rem;
+    left: 1.5rem;
+}
+label #cross{
+    font-size: 1.5rem;
+    opacity: 0.6;
+    position: absolute;
+    top: 1rem;
+    left: 14.3rem;
+    z-index: 1;
+}
+#menu:checked~.sidebar{
+    position: relative;
+    left: 0;
+    opacity: 1;
+}
+#menu:checked~label #bars{
+    display: none;
+}
+
+/* sidebar */
+.sidebar{
+    position: absolute;
+    left: -22rem;
+    opacity: 0;
+    background-color: #000;
+    width: 16rem;
+    padding: 0.3rem;
+    transition: 1s;
+}
+.above{
+    background-color: #121212;
+    width: 100%;
+    height: 20vh;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 2;
+}
+.home{
+    margin: 0 1rem 0.5rem 1.5rem;    
+    opacity: 0.7;
+}
+.search{
+    margin: 0.5rem 1rem 0 1.5rem;
+    opacity: 0.7;
+}
+.above a{
+    color: #fff;
+    text-decoration: none;
+}
+.above i{
+    font-size: 1.25rem;
+    margin-right: 1rem;
+}
+.above div:hover{
+    opacity: 1;
+}
+.below{
+    background-color: #121212;
+    width: 100%;
+    height: 75vh;
+    border-radius: 1rem;
+}
+.library{
+    display: flex;
+    height: 2.5rem;
+    justify-content: space-between;
+    align-items: first baseline;
+}
+.lib-option{
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    margin-left: 1.5rem;
+}
+.lib-option img{
+    height: 1.5rem;
+    margin-right: 0.7rem;
+    transform: rotate(-90deg);
+}
+.lib-icon{
+    font-size: 20px;
+    position: relative;
+    right: 1rem;
+    bottom: 0.2rem;
+    opacity: 0.7;
+}
+.lib-icon:hover{
+    opacity: 1;
+}
+
+.playlist{
+    background-color: #232323;
+    height: 22%;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 1rem;
+}
+.below h5{
+    margin: 0;
+    font-size: 1rem;
+}
+.button{
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.podcast{
+    background-color: #232323;
+    height: 30%;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 1rem;
+}
+/* main content */
+.main-content{
+    background-color: #121212;
+    flex: 1;
+    border-radius: 1rem;
+    margin: 0.3rem;
+    overflow: auto;
+}
+    /* Nav-Bar */
+.nav-bar{
+    background-color: #121212;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.nav-icon{
+    display: flex;
+    align-items: center;
+    margin-left: 6rem;
+}
+.nav-icon img{
+    margin: 0.2rem;
+    height: 2rem;
+}
+.brand{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+.brand img{
+    height: 3rem;
+}
+.brand h1{
+    margin: 0 0 0 0.3rem;
+}
+.nav-btn{
+    width: 45%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.nav-bar #install-icon{
+    margin-right: 0.3rem ;
+    font-size: 1rem;
+}
+.nav-bar #profile{
+    background-color: black;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    border: 7px solid black;
+}
+@media(max-width:900px){
+    .nav-bar #premium{
+        display: none;
+    }
+}
+    /* content Area */
+.main-content h2{
+    margin: 0;
+    width: 100%;
+}
+.recent{
+    height: 50%;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    background-color: #232323;
+    width: 10.5rem;
+    height: 14.5rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+.card img{
+    height: 70%;
+    width: 100%;
+    border-radius: 0.5rem;
+}
+.card-title{
+    margin: 0.2rem;
+}
+.card-desc{
+    margin: 0.5rem 0.2rem;
+    font-size: 0.75rem;
+}
+.content{
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+    /* footer area */
+.footer{
+    margin-top: 3rem;
+    height: 10rem;
+    text-align: center;
+}
+
+/* player */
+.player{
+    background-color: #000;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+.left{
+    width: 30%;
+    display: flex;
+}
+.left .image{
+    margin: 1rem;
+}
+.left .text{
+    margin: 2rem 0;
+}
+.left .text h5{
+    margin: 0 0 0.2rem 0;
+    font-size: 1rem;
+}
+.left .text p{
+    margin: 0;
+    font-size: 0.8rem;
+}
+.left .icons .icon1{
+    height: 2rem;
+    margin: 2rem 0.5rem 0 1rem;
+}
+.left .icons .icon2{
+    height: 3rem;
+    position: relative;
+    top: 0.5rem;
+}
+.center{
+    flex: 1;
+    text-align: center;
+}
+.center img{
+    height: 1.2rem;
+    margin-top: 0.5rem;
+    margin-right: 0.7rem;
+    opacity: 0.5;
+}
+#progress-bar{
+    width: 90%;
+    margin: 1rem;
+}
+.right{
+    width: 30%;
+    display: flex;
+    align-items: center;
+
+}
+.right img{
+    margin-left: 1rem;
+}
+.right .one{
+    height: 3rem;
+}
+.right .two{
+    height: 1.5rem;
+}
+.right .three{
+    height: 1.2rem;
+}
+.right .sound-bar{
+    width: 7rem;
+}
+
+/* Hover Items */
+label i:hover{
+    opacity: 1;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.main button:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+}
+.nav-icon img:hover{
+    box-shadow: 0 0 2px white;
+    cursor: pointer;
+}
+.nav-bar #profile:hover{
+    transform: scale(1.1);
+}
+.card:hover{
+    box-shadow: 0 0 2px white;
+    transform: scale(1.01);
+}
+.center img:hover{
+    opacity: 1;
+    transform: scale(1.05);
+}
